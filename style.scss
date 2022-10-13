@@ -1,0 +1,30 @@
+// css reset :
+
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: 'Montserrat', sans-serif;
+	background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+	height: 100vh;
+}
+
+// styles :
+
+.container {
+	margin: 0 auto;
+	padding: 0 1em;
+	width: 100%;
+	max-width: 1200px;
+}

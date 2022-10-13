@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stoperModal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/a2e1e5dd38.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="stoper-box">
+            <div class="stoper-icons">
+                <button>
+                    <i class="fa-solid fa-paintbrush"></i>
+                </button>
+                <button>
+                    <i class="fa-solid fa-question"></i>
+                </button>
+            </div>
+            <div class="top">
+                <h1>Stoper</h1>
+                <p class="stopwatch">0:00</p>
+                <p class="last-time">Ostatni czas: 0:00</p>
+            </div>
+            <div class="bottom">
+                <div class="action-buttons">
+                    <button class="play">
+                        <i class=" fa-solid fa-play"></i>
+                    </button>
+                    <button class="pause">
+                        <i class=" fa-solid fa-pause"></i>
+                    </button>
+                    <button class="stop">
+                        <i class=" fa-solid fa-stop"></i>
+                    </button>
+                    <button class="delete">
+                        <i class=" fa-solid fa-xmark"></i>
+                    </button>
+                    <button class="archive">archiwum</button>
+                </div>
+                <ul class="time-list"></ul>
+            </div>
+            <div class="instruction-popup">
+                <h3>instrukcja</h3>
+                <p><i class="fa-solid fa-play"></i> - start</p>
+                <p><i class="fa-solid fa-pause"></i> - pauza</p>
+                <p><i class="fa-solid fa-stop"></i> - stop</p>
+                <p><i class="fa-solid fa-xmark"></i> - skasuj wszystko (łącznie z archiwum)</p>
+                <p><span>archiwum</span> - zobacz wcześniejsze pomiary</p>
+                <button class="close">zamknij</button>
+            </div>
+            <div class="colors-popup">
+                <div class="orange"></div>
+                <div class="blue"></div>
+                <div class="green"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
