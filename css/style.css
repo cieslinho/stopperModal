@@ -40,83 +40,6 @@ body {
   max-width: 1200px;
 }
 
-.container .instruction-shadow {
-  display: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.container .instruction-popup {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding: 2em;
-  max-width: 400px;
-  background-color: #434343;
-  border-radius: 8px;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -webkit-box-shadow: 0 0 10px #000;
-          box-shadow: 0 0 10px #000;
-}
-
-.container .instruction-popup h3 {
-  margin-bottom: 0.5em;
-  font-size: 2.3rem;
-  color: var(--second-color);
-}
-
-.container .instruction-popup p {
-  margin-left: 1em;
-  color: var(--second-color);
-}
-
-.container .instruction-popup p i {
-  color: var(--first-color);
-}
-
-.container .instruction-popup button {
-  display: block;
-  margin: 1.5em auto 0;
-  padding: 0.8em 2em;
-  border: 1px solid var(--first-color);
-  background-color: #434343;
-  color: var(--second-color);
-  border-radius: 8px;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-  cursor: pointer;
-}
-
-.container .instruction-popup button:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.container .instruction-animation {
-  -webkit-animation: show-modal 0.5s;
-          animation: show-modal 0.5s;
-}
-
-@-webkit-keyframes show-modal {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes show-modal {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .stoper-box {
   position: relative;
   margin: 0 auto;
@@ -127,6 +50,7 @@ body {
   -webkit-box-shadow: 0 0 10px #000;
           box-shadow: 0 0 10px #000;
   border-radius: 8px;
+  overflow: hidden;
 }
 
 .stoper-box .info-icons {
@@ -136,13 +60,18 @@ body {
 }
 
 .stoper-box .info-icons button {
-  padding: 0.5em;
   margin: 0 0.3em;
   font-size: 1.8rem;
   border: none;
   background-color: transparent;
   cursor: pointer;
   color: var(--second-color);
+}
+
+.stoper-box .info-icons button i {
+  padding: 0.8em;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
 }
 
 .stoper-box .info-icons button:hover i {
@@ -227,11 +156,7 @@ body {
   transition: background-color 0.3s;
 }
 
-.stoper-box .bottom .action-buttons button:hover {
-  background-color: var(--first-color);
-}
-
-.stoper-box .bottom .action-buttons .active {
+.stoper-box .bottom .action-buttons button:focus, .stoper-box .bottom .action-buttons button:hover {
   background-color: var(--first-color);
 }
 
@@ -254,20 +179,169 @@ body {
   font-weight: bold;
 }
 
-.stoper-box .colors-popup {
-  display: none;
-  position: relative;
+.stoper-box .colors {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 70px;
+  right: -100px;
+  height: 150px;
+  width: 60px;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  transition: transform 0.35s, -webkit-transform 0.35s;
+  overflow: hidden;
 }
 
-.stoper-box .colors-popup .orange::before,
-.stoper-box .colors-popup .blue::before,
-.stoper-box .colors-popup .green::before {
-  content: '';
-  position: absolute;
-  right: 0;
-  width: 30px;
-  height: 30px;
-  background-color: red;
+.stoper-box .colors .color {
+  margin: 0.25em 0;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
+  border: 2px solid #ddd;
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+  -webkit-transition: background-color 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.5s;
+  transition: background-color 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.5s;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.5s;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.5s, -webkit-transform 0.3s, -webkit-box-shadow 0.5s;
+  cursor: pointer;
+}
+
+.stoper-box .colors .color:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.stoper-box .colors .one {
+  background-color: royalblue;
+  -webkit-box-shadow: 0 0 9px royalblue;
+          box-shadow: 0 0 9px royalblue;
+}
+
+.stoper-box .colors .two {
+  background-color: limegreen;
+  -webkit-box-shadow: 0 0 9px limegreen;
+          box-shadow: 0 0 9px limegreen;
+}
+
+.stoper-box .colors .three {
+  background-color: purple;
+  -webkit-box-shadow: 0 0 9px purple;
+          box-shadow: 0 0 9px purple;
+}
+
+.stoper-box .colors .one:hover {
+  background-color: #254bbb;
+  -webkit-box-shadow: 0 0 9px royalblue;
+          box-shadow: 0 0 9px royalblue;
+}
+
+.stoper-box .colors .two:hover {
+  background-color: #1da11d;
+  -webkit-box-shadow: 0 0 9px limegreen;
+          box-shadow: 0 0 9px limegreen;
+}
+
+.stoper-box .colors .three:hover {
+  background-color: #550055;
+  -webkit-box-shadow: 0 0 9px purple;
+          box-shadow: 0 0 9px purple;
+}
+
+.stoper-box .active-colors {
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+}
+
+.instruction-shadow {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.instruction-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 2em;
+  max-width: 400px;
+  background-color: #434343;
+  border-radius: 8px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0 0 10px #000;
+          box-shadow: 0 0 10px #000;
+}
+
+.instruction-popup h3 {
+  margin-bottom: 0.5em;
+  font-size: 2.3rem;
+  color: var(--second-color);
+}
+
+.instruction-popup p {
+  margin-left: 1em;
+  color: var(--second-color);
+}
+
+.instruction-popup p i {
+  color: var(--first-color);
+}
+
+.instruction-popup button {
+  display: block;
+  margin: 1.5em auto 0;
+  padding: 0.8em 2em;
+  border: 1px solid var(--first-color);
+  background-color: #434343;
+  color: var(--second-color);
+  border-radius: 8px;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.instruction-popup button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.instruction-animation {
+  -webkit-animation: show-modal 0.5s;
+          animation: show-modal 0.5s;
+}
+
+@-webkit-keyframes show-modal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show-modal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=style.css.map */
